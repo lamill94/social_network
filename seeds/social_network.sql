@@ -28,3 +28,15 @@ CREATE TABLE posts (
     references accounts(id)
     on delete cascade
 );
+
+-- Finally, we add any records that are needed for the tests to run
+INSERT INTO accounts (email, username) VALUES ('laurenm@gmail.com', 'lamill94'); 
+INSERT INTO accounts (email, username) VALUES ('claudiom@gmail.com', 'claudioAudio'); 
+INSERT INTO accounts (email, username) VALUES ('stinkylara@gmail.com', 'IStinkNice');
+
+INSERT INTO posts (title, content, views, account_id) VALUES ('The worst day', 'My car exploded!', 600, 1);
+INSERT INTO posts (title, content, views, account_id) VALUES ('The best day', 'Hubby bought me a new car!', 700, 1);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Boring', 'Flew to Stanstead..yawn!', 100, 2);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Sunshine awaits me!', 'Flying to Hurghada today woo!', 200, 2);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Customers suck', 'Man customers are so dumb!', 20, 3);
+INSERT INTO posts (title, content, views, account_id) VALUES ('Today was better', 'I was on with Adam so that makes things better', 50, 3);
