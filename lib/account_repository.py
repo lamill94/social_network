@@ -15,6 +15,7 @@ class AccountRepository:
             accounts.append(item)
         return accounts
     
+    # Create a new account
     def create(self, account):
         rows = self._connection.execute_query('INSERT INTO accounts (email, username) VALUES (%s, %s) RETURNING id', [account.email, account.username])
         row = rows[0]
